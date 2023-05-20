@@ -12,6 +12,7 @@ resource "aws_security_group_rule" "this" {
   }
 
   type              = each.value.rule.type
+  description       = each.value.rule.description
   from_port         = each.value.rule.from_port
   to_port           = each.value.rule.to_port
   protocol          = each.value.rule.protocol

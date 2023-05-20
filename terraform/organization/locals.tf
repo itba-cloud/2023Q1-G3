@@ -37,15 +37,8 @@ locals {
       description = "Generic Lambda Security Group",
       rules = [
         {
-          name        = "no-egress"
-          type        = "egress"
-          from_port   = 0
-          to_port     = 0
-          protocol    = "-1"
-          cidr_blocks = ["0.0.0.0/0"]
-        },
-        {
           name        = "ingress-http"
+          description = "Lambda ingress http"
           type        = "ingress"
           from_port   = 80
           to_port     = 80
@@ -54,6 +47,7 @@ locals {
         },
         {
           name        = "ingress-https"
+          description = "Lambda ingress https"
           type        = "ingress"
           from_port   = 443
           to_port     = 443
